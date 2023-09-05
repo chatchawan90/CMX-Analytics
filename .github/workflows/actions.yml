@@ -19,7 +19,7 @@ jobs:
             DISTRO: Ubuntu
             DOCS_URL: https://yarden-zamir.com/alternate-docs-path.md
             REMOVE_EXITS: true
-            
+
       - name: setup python
         uses: actions/setup-python@v4
         with:
@@ -33,6 +33,10 @@ jobs:
       - name: execute py script # run main.py
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
+          SERVER: ${{ secrets.SQL_SERVER }}
+          DB: ${{ secrets.DB }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: python project/merck_revenue_with_categories.py
           
       - name: commit files

@@ -45,15 +45,21 @@ import pyodbc
 import datetime
 import openpyxl
 from dateutil.relativedelta import relativedelta
-
-!pip install pyodbc
-
+import os 
 server = 'sichemex.fortiddns.com,1444'
 database = 'dbwins_cmx'
 username = 'chemex'
 password = '6vQ~cDx6yCpP(CQ`'
 
-cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+try: 
+  SERVER = os.environ["SERVER"]
+  DB = os.environ["DB"]
+  USERNAME = os.environ["SERVER"]
+  PASSWORD = os.environ["PASSWORD"]
+except KeyError:
+  print("Cannot find the keys")
+
+cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+SERVER+';DATABASE='+DB+';UID='+USERNAME+';PWD='+ PASSWORD)
 cursor = cnxn.cursor()
 
 # Commented out IPython magic to ensure Python compatibility.
@@ -79,7 +85,7 @@ def retreive_val ( query):
 revenue_pd = pd.DataFrame(retreive_val("select * from bi_revenue where docuno like 'IV%'")[1])
 
 # If file not found, copy the file path from the panel on the left (assuming you are on GDrive)
-cat_pd = pd.read_csv('/content/gdrive/MyDrive/Chemical Express/Marketing Google Drive/Analytics/Merck Product Categories Extraction/Data/CSV/cleaned_unique_category.csv',encoding = 'unicode_escape')
+cat_pd = pd.read_csv('cleaned_unique_category.csv',encoding = 'unicode_escape')
 
 import numpy as np
 from google.colab import autoviz
@@ -167,9 +173,6 @@ searched= searched[searched['แบรนด์'].isin(merck_brand)]
 
 searched.drop(columns=['product_code', 'product_description'])
 
-'Sigma-Aldrich', 'Supelco',
-    'Roche''Sigma''Millipore''Aldrich'
-    'Supleco''Merck'
 
 searched['found'].value_counts()
 
