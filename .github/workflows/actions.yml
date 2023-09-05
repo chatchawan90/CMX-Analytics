@@ -1,8 +1,8 @@
 name: run revenue_with_categories
 
-on:
-  schedule:
-    - cron: '0 0 * * 1' # At 00:00 on Monday
+on: [workflow_dispatch]
+#   schedule:
+#     - cron: '0 0 * * 1' # At 00:00 on Monday
 
 jobs:
   build:
