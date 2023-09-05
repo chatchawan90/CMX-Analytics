@@ -7,37 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1yel5qGLKBd4FK9Yw1IP8UL4xmeBJP232
 """
 
-from google.colab import drive
-drive.mount('/content/gdrive')
 import os
 
-# Commented out IPython magic to ensure Python compatibility.
-# %%sh
-# apt --fix-broken install
-
-# Commented out IPython magic to ensure Python compatibility.
-# %%sh
-# odbcinst -j
-
-# Commented out IPython magic to ensure Python compatibility.
-# %%sh
-# 
-# sudo apt --fix-broken install
-# sudo apt-get update
-# sudo apt-get upgrade
-
-# Commented out IPython magic to ensure Python compatibility.
-# %%sh
-# 
-# curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-# 
-# curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
-# 
-# sudo apt-get update
-# 
-# sudo ACCEPT_EULA=Y apt-get -q -y install msodbcsql17
-# 
-#
 
 import pandas as pd
 import numpy as np
@@ -46,16 +17,16 @@ import datetime
 import openpyxl
 from dateutil.relativedelta import relativedelta
 import os 
-server = 'sichemex.fortiddns.com,1444'
-database = 'dbwins_cmx'
-username = 'chemex'
-password = '6vQ~cDx6yCpP(CQ`'
+SERVER = 'sichemex.fortiddns.com,1444'
+DB = 'dbwins_cmx'
+USERNAME = 'chemex'
+PASSWORD = '6vQ~cDx6yCpP(CQ`'
 
 try: 
   SERVER = os.environ["SERVER"]
   DB = os.environ["DB"]
-  USERNAME = os.environ["SERVER"]
-  PASSWORD = os.environ["PASSWORD"]
+  USERNAME = os.environ["USERNAME"]
+  PASSWORD = '6vQ~cDx6yCpP(CQ`'
 except KeyError:
   print("Cannot find the keys")
 
@@ -82,102 +53,75 @@ def retreive_val ( query):
     # LoD = list of dict
     return col,result_LoD
 
-revenue_pd = pd.DataFrame(retreive_val("select * from bi_revenue where docuno like 'IV%'")[1])
+if __name__ == '__main__':
+  # Get revenue data from the database
+  revenue_pd = pd.DataFrame(retreive_val("""select * from bi_revenue where docuno like 'IVZ%'
+                                        and  year(docudate)=2023
+                                        and แบรนด์ in 
+                                        ('Sigma-Aldrich', 'Supelco', 'Roche', 'Sigma', 'Millipore', 'Aldrich', 'Supelco', 'Merck')
+                                        """)[1])
 
-# If file not found, copy the file path from the panel on the left (assuming you are on GDrive)
-cat_pd = pd.read_csv('cleaned_unique_category.csv',encoding = 'unicode_escape')
+  # If file not found, copy the file path from the panel on the left (assuming you are on GDrive)
+  cat_pd = pd.read_csv('project/cleaned_unique_category.csv',encoding = 'unicode_escape')
 
-import numpy as np
-from google.colab import autoviz
-df_1153411048952213344 = autoviz.get_df('df_1153411048952213344')
 
-def categorical_histogram(df, colname, figsize=(2, 1.2), mpl_palette_name='Dark2'):
-  from matplotlib import pyplot as plt
-  import seaborn as sns
-  _, ax = plt.subplots(figsize=figsize)
-  bars = df[colname].value_counts()
-  plt.barh(bars.index, bars.values, color=sns.palettes.mpl_palette(mpl_palette_name))
-  plt.title(colname)
-  ax.spines[['top', 'right',]].set_visible(False)
-  return autoviz.MplChart.from_current_mpl_state()
 
-chart = categorical_histogram(df_1153411048952213344, *['business_unit_desc'], **{})
-chart
+  revenue_pd_dict = revenue_pd.to_dict('records')
+  cat_pd_dict = cat_pd.to_dict('records')
 
-import numpy as np
-from google.colab import autoviz
-df_1153411048952213344 = autoviz.get_df('df_1153411048952213344')
 
-def categorical_histogram(df, colname, figsize=(2, 1.2), mpl_palette_name='Dark2'):
-  from matplotlib import pyplot as plt
-  import seaborn as sns
-  _, ax = plt.subplots(figsize=figsize)
-  bars = df[colname].value_counts()
-  plt.barh(bars.index, bars.values, color=sns.palettes.mpl_palette(mpl_palette_name))
-  plt.title(colname)
-  ax.spines[['top', 'right',]].set_visible(False)
-  return autoviz.MplChart.from_current_mpl_state()
-
-chart = categorical_histogram(df_1153411048952213344, *['business_unit_code'], **{})
-chart
-
-revenue_pd_dict = revenue_pd.to_dict('records')
-cat_pd_dict = cat_pd.to_dict('records')
-
-cat_pd_dict[0]
-
-revenue_pd_dict[0]
-
-isinstance('s', list)
-
-'k-i-a'.split('-')
-
-for r in revenue_pd_dict:
-  r['found'] = False
-  r['รหัสสินค้า'] = r['รหัสสินค้า'].upper()
-  for c in cat_pd_dict:
-    if isinstance(c['product_code'], str):
-      if r['รหัสสินค้า'].upper() == c['product_code'].upper():
-        for k,v in c.items():
-          if k != 'product_code' and k != 'product_description':
-            r[k] = c[k]
-            r['found']= True
+  for r in revenue_pd_dict:
+    # Initialize to be NOT FOUND first
+    r['found'] = False
+    r['รหัสสินค้า'] = r['รหัสสินค้า'].upper()
+    # Loop through the category dictionary
+    for c in cat_pd_dict:
+      if isinstance(c['product_code'], str):
+        if r['รหัสสินค้า'].upper() == c['product_code'].upper():
+          for k,v in c.items():
+            if k != 'product_code' and k != 'product_description':
+              r[k] = c[k]
+              r['found']= True
+        else:
+          if 'SIA' in r['รหัสสินค้า'].upper() and r['รหัสสินค้า'].count('-')==2:
+            if r['รหัสสินค้า'].split('-')[1] in  c['product_code'].upper():
+              for k,v in c.items():
+                if k != 'product_code' and k != 'product_description':
+                  r[k] = c[k]
+                  r['found']= True
       else:
-        if 'SIA' in r['รหัสสินค้า'].upper() and r['รหัสสินค้า'].count('-')==2:
-           if r['รหัสสินค้า'].split('-')[1] in  c['product_code'].upper():
-            for k,v in c.items():
-              if k != 'product_code' and k != 'product_description':
-                r[k] = c[k]
-                r['found']= True
-    else:
-      cap_list = [x.upper() for x in c['product_code']]
+        cap_list = [x.upper() for x in c['product_code']]
 
-      if r['รหัสสินค้า'].upper() in cap_list:
-        for k,v in c.items():
-          if k != 'product_code' and k != 'product_description':
-            r[k] = c[k]
-            r['found']= True
-      else:
-        if 'SIA' in r['รหัสสินค้า'].upper() and r['รหัสสินค้า'].count('-')==2:
-           if r['รหัสสินค้า'].split('-')[1] in  cap_list:
-            for k,v in c.items():
-              if k != 'product_code' and k != 'product_description':
-                r[k] = c[k]
-                r['found']= True
+        if r['รหัสสินค้า'].upper() in cap_list:
+          for k,v in c.items():
+            if k != 'product_code' and k != 'product_description':
+              r[k] = c[k]
+              r['found']= True
+        else:
+          if 'SIA' in r['รหัสสินค้า'].upper() and r['รหัสสินค้า'].count('-')==2:
+            if r['รหัสสินค้า'].split('-')[1] in  cap_list:
+              for k,v in c.items():
+                if k != 'product_code' and k != 'product_description':
+                  r[k] = c[k]
+                  r['found']= True
 
-"""# New Section"""
+  """# New Section"""
 
-searched = pd.DataFrame(revenue_pd_dict)
-merck_brand = ['Sigma-Aldrich', 'Supelco', 'Roche', 'Sigma', 'Millipore', 'Aldrich', 'Supelco', 'Merck']
-searched= searched[searched['แบรนด์'].isin(merck_brand)]
+  searched = pd.DataFrame(revenue_pd_dict)
+  print(searched)
+  merck_brand = ['Sigma-Aldrich', 'Supelco', 'Roche', 'Sigma', 'Millipore', 'Aldrich', 'Supelco', 'Merck']
+  searched= searched[searched['แบรนด์'].isin(merck_brand)]
+  print(searched.columns)
+  drop_col = ['product_code', 'product_description']
+  for d in drop_col:
+    if d in searched.columns:
+      searched.drop(columns=[d])
 
-searched.drop(columns=['product_code', 'product_description'])
+  searched.to_csv('searched.csv')
 
+  searched['found'].value_counts()
 
-searched['found'].value_counts()
-
-# Unmatched product based on the data provided from Merck.
-# I suspect that the unmatched products are other product categories since we only have the categories from Merck SLS (life science)
-# For example, top 3 products listed here are under industrial microbiology which is another BU in MERCK
-unfound_pd= searched[~searched['found']][['รหัสสินค้า','รายละเอียดสินค้า']].value_counts().rename_axis(['product_code','description']).reset_index(name='counts')
-
+  # Unmatched product based on the data provided from Merck.
+  # I suspect that the unmatched products are other product categories since we only have the categories from Merck SLS (life science)
+  # For example, top 3 products listed here are under industrial microbiology which is another BU in MERCK
+  unfound_pd= searched[~searched['found']][['รหัสสินค้า','รายละเอียดสินค้า']].value_counts().rename_axis(['product_code','description']).reset_index(name='counts')
