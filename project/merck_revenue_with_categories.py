@@ -22,13 +22,7 @@ DB = 'dbwins_cmx'
 USERNAME = 'chemex'
 PASSWORD = '6vQ~cDx6yCpP(CQ`'
 
-try: 
-  SERVER = os.environ["SERVER"]
-  DB = os.environ["DB"]
-  USERNAME = os.environ["USERNAME"]
-  PASSWORD = '6vQ~cDx6yCpP(CQ`'
-except KeyError:
-  print("Cannot find the keys")
+
 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+SERVER+';DATABASE='+DB+';UID='+USERNAME+';PWD='+ PASSWORD)
 cursor = cnxn.cursor()
