@@ -17,10 +17,7 @@ import datetime
 import openpyxl
 from dateutil.relativedelta import relativedelta
 import os 
-SERVER = 'sichemex.fortiddns.com,1444'
-DB = 'dbwins_cmx'
-USERNAME = 'chemex'
-PASSWORD = '6vQ~cDx6yCpP(CQ`'
+
 
 SERVER = os.getenv('SERVER')
 DB = os.getenv('DB')
