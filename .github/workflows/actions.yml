@@ -40,8 +40,8 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-            echo $SERVER
-            echo $DB
+            echo "$SERVER"
+            echo "$DB"
             echo $USERNAME
             echo $PASSWORD
 
