@@ -35,7 +35,7 @@ jobs:
       - name: check env vars
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
-          SERVER: ${{ secrets.SERVER }}
+          SERVER: ${{ secrets.SERVER.SERVER }}
           DB: ${{ secrets.DB }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
