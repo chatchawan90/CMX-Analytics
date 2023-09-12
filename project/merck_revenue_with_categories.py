@@ -22,6 +22,10 @@ DB = 'dbwins_cmx'
 USERNAME = 'chemex'
 PASSWORD = '6vQ~cDx6yCpP(CQ`'
 
+SERVER = os.getenv('SERVER')
+DB = os.getenv('DB')
+USERNAME = os.getenv('USERNAME')
+PASSWORD = os.getenv('PASSWORD')
 
 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+SERVER+';DATABASE='+DB+';UID='+USERNAME+';PWD='+ PASSWORD)
