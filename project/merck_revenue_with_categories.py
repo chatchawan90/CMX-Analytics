@@ -51,7 +51,7 @@ def retreive_val ( query):
 if __name__ == '__main__':
   # Get revenue data from the database
   revenue_pd = pd.DataFrame(retreive_val("""select * from bi_revenue where docuno like 'IVZ%'
-                                        and  year(docudate)=2023
+                                        and  (year(docudate)=2023 or year(docudate)=2024 ) 
                                         and แบรนด์ in 
                                         ('Sigma-Aldrich', 'Supelco', 'Roche', 'Sigma', 'Millipore', 'Aldrich', 'Supelco', 'Merck')
                                         """)[1])
