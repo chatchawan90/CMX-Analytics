@@ -63,7 +63,7 @@ if __name__ == '__main__':
                                         """)[1])
 
   # If file not found, copy the file path from the panel on the left (assuming you are on GDrive)
-  cat_pd = pd.read_csv('cleaned_unique_category.csv',encoding = 'unicode_escape')
+  cat_pd = pd.read_csv('project/cleaned_unique_category.csv',encoding = 'unicode_escape')
 
 
 
@@ -119,9 +119,9 @@ if __name__ == '__main__':
 
     # File location 
   # /home/twrx/W/DataENV/Merck Product Categorization 2024
-  bioM = "BioM Product list.csv"
-  biology = "Millipore product - LR4_Biology 2023.csv"
-  chemistry = "Processed Stockcode for Chemistry_Merck.csv"
+  bioM = "project/BioM Product list.csv"
+  biology = "project/Millipore product - LR4_Biology 2023.csv"
+  chemistry = "project/Processed Stockcode for Chemistry_Merck.csv"
 
   # Read csv's
   bioM_pd = pd.read_csv(bioM)
