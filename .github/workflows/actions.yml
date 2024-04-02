@@ -41,7 +41,7 @@ jobs:
           DB: ${{ secrets.DB }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python project/merck_revenue_with_categories.py
+        run: python project/merck_revenue_with_categories_V2.py
           
       - name: commit files
         run: |
