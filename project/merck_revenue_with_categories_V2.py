@@ -142,7 +142,7 @@ if __name__ == '__main__':
   assert not_found_bioM.shape[0]+bioM_matched.shape[0] == product_sold_past.shape[0]
 
   # Need this because NEW biology file does not contain granular detail
-  prev_clean = pd.read_csv("cleaned_unique_category.csv", encoding = 'unicode_escape')
+  prev_clean = pd.read_csv("project/cleaned_unique_category.csv", encoding = 'unicode_escape')
   prev_clean.head(10)
   # biology_pd['Stockcode'] = biology_pd['Stockcode'].str.lower() 
   # prev_clean['product_code'] = prev_clean['product_code'].str.lower()
@@ -174,7 +174,7 @@ if __name__ == '__main__':
 
 
   #Now we need to try to match the previous versoin again (above, we only do it for biology)
-  prev_clean = pd.read_csv("cleaned_unique_category.csv", encoding = 'unicode_escape')
+  prev_clean = pd.read_csv("project/cleaned_unique_category.csv", encoding = 'unicode_escape')
 
   dedup_merge = dedup.merge(prev_clean, indicator=True, left_on = 'รหัสสินค้า', right_on = 'product_code', suffixes=('_x', ''),how='outer')
   dedup_merge.drop(dedup_merge.filter(regex='_x$').columns, axis=1 , inplace=True)
@@ -290,7 +290,7 @@ if __name__ == '__main__':
   searched = pd.concat([searched, second_merge], ignore_index=True)
   searched.drop_duplicates(subset=['docuno','รหัสสินค้า'], keep='first', inplace=True)
   searched.dropna(subset=['business_unit_desc'], inplace=True)
-  searched.to_csv('searched_.csv')
+  searched.to_csv('searched.csv')
 
   searched['found'].value_counts()
 

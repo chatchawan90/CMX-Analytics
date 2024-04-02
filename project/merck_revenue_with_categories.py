@@ -57,7 +57,7 @@ if __name__ == '__main__':
                                         """)[1])
 
   # If file not found, copy the file path from the panel on the left (assuming you are on GDrive)
-  cat_pd = pd.read_csv('project/cleaned_unique_category.csv',encoding = 'unicode_escape')
+  cat_pd = pd.read_csv('/project/cleaned_unique_category.csv',encoding = 'unicode_escape')
 
 
 
@@ -111,6 +111,10 @@ if __name__ == '__main__':
   for d in drop_col:
     if d in searched.columns:
       searched.drop(columns=[d])
+
+
+
+
 
   searched.to_csv('searched.csv')
 
