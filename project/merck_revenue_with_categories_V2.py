@@ -265,6 +265,8 @@ if __name__ == '__main__':
     "Sub Cat" : 'business_field_desc',
     "SBU" : 'sbu_description',
   }
+  
+  # Output = NEW categories files that match our product DB
   final_merge.rename(columns= rename_dict, inplace=True)
   # final_merge_dict = final_merge.to_dict('records')
   
@@ -276,9 +278,23 @@ if __name__ == '__main__':
   """# New Section"""
 
   searched = pd.DataFrame(revenue_pd_dict)
+  # THe following code will incorporate new matching
+  # First we want to extract the remaining products that did not match from the first file
   not_found = searched[~searched['found']]
-  second_merge = not_found.merge(final_merge, left_on= 'รหัสสินค้า', right_on='รหัสสินค้า', how='inner')
-  print(searched)
+  not_found_idx = not_found.index
+  # Initialize the variable found
+  # Join the unfound with the second file
+  second_merge = not_found.merge(final_merge, left_on= 'รหัสสินค้า', right_on='รหัสสินค้า', suffixes=('', '_y'), how='inner')
+  update_col = ['รายละเอียดสินค้า','sbu_description','business_field_desc','business_unit_desc']
+  for u in update_col:
+    second_merge[u] = second_merge.apply(lambda x:x[u+'_y'], axis=1)
+  
+  # Drop _y
+  second_merge.drop(columns = [x+'_y' for x in second_merge.columns if x+'_y' in second_merge.columns], inplace=True)
+  # update found = True
+  second_merge['found'] = True
+  
+  print(second_merge)
   merck_brand = ['Sigma-Aldrich', 'Supelco', 'Roche', 'Sigma', 'Millipore', 'Aldrich', 'Supelco', 'Merck']
   searched= searched[searched['แบรนด์'].isin(merck_brand)]
   print(searched.columns)
@@ -287,8 +303,13 @@ if __name__ == '__main__':
     if d in searched.columns:
       searched.drop(columns=[d])
 
+  
   searched = pd.concat([searched, second_merge], ignore_index=True)
+  # second_merge now contains previously not matched & still not matched + previously not matched & now matched
+  # sort so that NaN move to the bottom
+  searched = searched.sort_values(['docuno','ลำดับ','รหัสสินค้า','business_unit_desc'])
   searched.drop_duplicates(subset=['docuno','รหัสสินค้า'], keep='first', inplace=True)
+  searched.reset_index(drop=True, inplace=True)
   searched.dropna(subset=['business_unit_desc'], inplace=True)
   searched.to_csv('searched.csv')
 
