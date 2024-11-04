@@ -134,6 +134,10 @@ if __name__ == '__main__':
   bioM_pd = bioM_pd.drop(columns= list(a for a in bioM_pd.columns if a not in keep_col))
   bioM_pd = bioM_pd.fillna("")
   bioM_pd['Stockcode']= bioM_pd['Stockcode'].apply(lambda x:f"{x[:6]}.{x[6:]}")
+  
+  condition = (bioM_pd['Stockcode'].str.len() == 10) & (bioM_pd['Stockcode'].str.isdigit())
+  bioM_pd.loc[condition,'Stockcode'] = bioM_pd[condition]['Stockcode'].apply(lambda x: x[:-4]+"."+x[-4:])
+
   # bioM_pd.head(10)
   bioM_merged = bioM_pd.merge(product_sold_past, left_on = "Stockcode", right_on = "รหัสสินค้า", how='right')
   empty = bioM_merged['Descripiton'].isnull()
