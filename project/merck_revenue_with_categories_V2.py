@@ -26,10 +26,8 @@ SERVER = os.getenv('SERVER')
 DB = os.getenv('DB')
 USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD')
-SERVER='sichemex.fortiddns.com,1444'
-DB='dbwins_cmx'
-USERNAME='chemex'
-PASSWORD=r'6vQ~cDx6yCpP(CQ`'
+
+
 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+SERVER+';DATABASE='+DB+';UID='+USERNAME+';PWD='+ PASSWORD)
 cursor = cnxn.cursor()
@@ -119,10 +117,12 @@ if __name__ == '__main__':
 
     # File location 
   # /home/twrx/W/DataENV/Merck Product Categorization 2024
-  bioM = "project/BioM Product list.csv"
+  # 4/11/2024 
+  # Change the  file from BioM Product list.csv to 112024_bioM2025_processed.csv
+
+  bioM = "project/112024_bioM2025_processed.csv"
   biology = "project/Millipore product - LR4_Biology 2023.csv"
   chemistry = "project/Processed Stockcode for Chemistry_Merck.csv"
-
   # Read csv's
   bioM_pd = pd.read_csv(bioM)
   biology_pd = pd.read_csv(biology)
