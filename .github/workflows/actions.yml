@@ -19,9 +19,14 @@ jobs:
       - name: install ODBC driver 
         run:
             |
-            sudo apt-get update \
-            && sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 -y\
-            && sudo apt-get install unixodbc-dev -y
+            sudo apt-get install -y unixodbc-dev \
+            && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+            && curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list > /etc/apt/sources.list.d/mssql-release.list \
+            && sudo apt-get update \
+            && sudo ACCEPT_EULA=Y apt-get -q -y install msodbcsql17 \
+            # sudo apt-get update \
+            # && sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 -y\
+            # && sudo apt-get install unixodbc-dev -y
         shell: sudo bash {0} 
 
       - name: setup python
