@@ -29,7 +29,7 @@ PASSWORD = os.getenv('PASSWORD')
 
 
 
-cnxn = pyodbc.connect('DRIVER={ODBC Driver 18 for SQL Server};SERVER='+SERVER+';DATABASE='+DB+';UID='+USERNAME+';PWD='+ PASSWORD;TrustServerCertificate=yes;)
+cnxn = pyodbc.connect('DRIVER={ODBC Driver 18 for SQL Server};SERVER='+SERVER+';DATABASE='+DB+';UID='+USERNAME+';PWD='+ PASSWORD+';TrustServerCertificate=yes;')
 cursor = cnxn.cursor()
 
 # Commented out IPython magic to ensure Python compatibility.
