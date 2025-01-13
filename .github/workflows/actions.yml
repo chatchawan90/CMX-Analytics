@@ -3,7 +3,7 @@ name: run revenue_with_categories
 on: 
     #Uncomment for Manual workflow 
     # [workflow_dispatch]
-  # schedule:
+  schedule:
     - cron: '0 * * * *' 
 
 jobs:
