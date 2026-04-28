@@ -6,6 +6,10 @@ on:
   schedule:
     - cron: '0 * * * *' 
 
+concurrency:
+  group: revenue-with-categories-main
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,6 +19,8 @@ jobs:
 
       - name: checkout repo content
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: install ODBC driver 
         run:
@@ -58,8 +64,10 @@ jobs:
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "updated categories" --allow-empty)
           
+      - name: rebase on latest main
+        run: |
+          git fetch origin main
+          git pull --rebase origin main
+
       - name: push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ github.token  }}
-          branch: main 
+        run: git push origin HEAD:main
