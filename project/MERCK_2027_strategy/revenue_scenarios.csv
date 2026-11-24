@@ -1,0 +1,4 @@
+﻿scenario,estimated_2026_revenue_thb,growth_pct,2027_target_thb,retention_assumption_pct,attrition_allowance_thb,decline_recovery_assumption_pct,decline_recovery_thb,inactive_recovery_assumption_pct,inactive_recovery_thb,required_existing_expansion_thb,required_new_customer_revenue_thb,total_gross_growth_required_thb,documented_incremental_pipeline_in_supplied_data_thb,growth_not_validated_by_pipeline_data_thb
+Conservative,117857446.97,5.00,123750319.32,96.00,-4714297.88,20.00,4291179.51,15.00,558280.16,4318282.92,1439427.64,10607170.23,0.00,10607170.23
+Base,117857446.97,10.00,129643191.67,97.00,-3535723.41,35.00,7509564.13,25.00,930466.93,5161077.78,1720359.26,15321468.11,0.00,15321468.11
+Supported stretch,117857446.97,15.00,135536064.02,98.00,-2357148.94,50.00,10727948.76,35.00,1302653.70,5603614.47,2401549.06,20035765.99,0.00,20035765.99

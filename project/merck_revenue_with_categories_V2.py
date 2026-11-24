@@ -14,6 +14,7 @@ import os
 
 
 import pandas as pd
+from merck_complete_export import export_all_revenue
 import numpy as np
 import pyodbc
 import datetime
@@ -282,6 +283,8 @@ if __name__ == '__main__':
   """# New Section"""
 
   searched = pd.DataFrame(revenue_pd_dict)
+  # Preserve every SQL result row before the legacy filtering/deduplication.
+  export_all_revenue(revenue_pd, searched, final_merge, 'searched_all.csv')
   # THe following code will incorporate new matching
   # First we want to extract the remaining products that did not match from the first file
   not_found = searched[~searched['found']]

@@ -1,0 +1,919 @@
+{
+  "as_of": "2026-11-20",
+  "source_sha256": "0c0a4c2decc5f62c06d93e2bb498584ede7cbfd2c113f02469be45533e5c0449",
+  "segmentation_sha256": "e14f509987e662769e61872e58dfebe5ce7ac25e0b9aca57a12cf57ab2ff083e",
+  "raw_rows": 36385,
+  "eligible_rows": 35957,
+  "exclusions": {
+    "flagged_invoice_2024": {
+      "rows": 284,
+      "revenue": "2210200.96000000"
+    },
+    "flagged_invoice_2025": {
+      "rows": 84,
+      "revenue": "1364176.01000000"
+    },
+    "flagged_invoice_2026": {
+      "rows": 46,
+      "revenue": "1024417.17000000"
+    },
+    "future_dated_2026": {
+      "rows": 14,
+      "revenue": "137840.00000000"
+    }
+  },
+  "years": {
+    "2024": {
+      "ytd_revenue": "100912096.61000000",
+      "full_year_or_ytd_revenue": "113192056.56000000",
+      "ytd_accounts_with_records": 577,
+      "ytd_buying_accounts": 577,
+      "ytd_rows": 10677
+    },
+    "2025": {
+      "ytd_revenue": "98503851.59000000",
+      "full_year_or_ytd_revenue": "111574550.71000000",
+      "ytd_accounts_with_records": 627,
+      "ytd_buying_accounts": 627,
+      "ytd_rows": 11305
+    },
+    "2026": {
+      "ytd_revenue": "104050721.17000000",
+      "full_year_or_ytd_revenue": "104050721.17000000",
+      "ytd_accounts_with_records": 648,
+      "ytd_buying_accounts": 648,
+      "ytd_rows": 11226
+    }
+  },
+  "annualization_factor_2025": "1.132692264404074557466753367",
+  "estimated_2026_fy": "117857446.9749242779908642961",
+  "estimated_2026_fy_using_2024": "116712619.3136324469356399789",
+  "historical_bridge": {
+    "2025_ytd": "98503851.59000000",
+    "retained_expansion": "24514453.80000000",
+    "retained_contraction": "-18886477.51000000",
+    "inactive_previous_buyers": "-3405587.71000000",
+    "additional_current_buyers": "3324481.00000000",
+    "2026_ytd": "104050721.17000000"
+  },
+  "retained_buyers": 489,
+  "inactive_ytd_buyers": 138,
+  "additional_ytd_buyers": 159,
+  "2026_top10_share_pct": "30.29298993372849104299965901",
+  "top_two_growth_accounts": [
+    "ZH-PTTGC",
+    "ZH-MMMI"
+  ],
+  "top_two_growth_contribution": "5387022.25000000",
+  "growth_excluding_top_two_accounts_pct": "0.168440275998195094729242300",
+  "matched_segmentation_revenue_pct": "84.69937038303758639869117593",
+  "decline_recovery_pool": "21455897.52592348184950805334",
+  "inactive_recovery_pool": "3721867.71000000",
+  "reference_cross_sell_candidates": 341,
+  "priority_account_count": 65,
+  "scenarios": [
+    {
+      "scenario": "Conservative",
+      "estimated_2026_revenue_thb": "117857446.9749242779908642961",
+      "growth_pct": "5.00",
+      "2027_target_thb": "123750319.3236704918904075109",
+      "retention_assumption_pct": "96.00",
+      "attrition_allowance_thb": "-4714297.878996971119634571844",
+      "decline_recovery_assumption_pct": "20.00",
+      "decline_recovery_thb": "4291179.505184696369901610668",
+      "inactive_recovery_assumption_pct": "15.00",
+      "inactive_recovery_thb": "558280.1565000000",
+      "required_existing_expansion_thb": "4318282.924543866486957131925",
+      "required_new_customer_revenue_thb": "1439427.641514622162319043975",
+      "total_gross_growth_required_thb": "10607170.22774318501917778664",
+      "documented_incremental_pipeline_in_supplied_data_thb": "0",
+      "growth_not_validated_by_pipeline_data_thb": "10607170.22774318501917778664"
+    },
+    {
+      "scenario": "Base",
+      "estimated_2026_revenue_thb": "117857446.9749242779908642961",
+      "growth_pct": "10.00",
+      "2027_target_thb": "129643191.6724167057899507257",
+      "retention_assumption_pct": "97.00",
+      "attrition_allowance_thb": "-3535723.409247728339725928883",
+      "decline_recovery_assumption_pct": "35.00",
+      "decline_recovery_thb": "7509564.134073218647327818669",
+      "inactive_recovery_assumption_pct": "25.00",
+      "inactive_recovery_thb": "930466.9275000000",
+      "required_existing_expansion_thb": "5161077.783875203118613404850",
+      "required_new_customer_revenue_thb": "1720359.261291734372871134950",
+      "total_gross_growth_required_thb": "15321468.10674015613881235848",
+      "documented_incremental_pipeline_in_supplied_data_thb": "0",
+      "growth_not_validated_by_pipeline_data_thb": "15321468.10674015613881235848"
+    },
+    {
+      "scenario": "Supported stretch",
+      "estimated_2026_revenue_thb": "117857446.9749242779908642961",
+      "growth_pct": "15.00",
+      "2027_target_thb": "135536064.0211629196894939405",
+      "retention_assumption_pct": "98.00",
+      "attrition_allowance_thb": "-2357148.939498485559817285922",
+      "decline_recovery_assumption_pct": "50.00",
+      "decline_recovery_thb": "10727948.76296174092475402667",
+      "inactive_recovery_assumption_pct": "35.00",
+      "inactive_recovery_thb": "1302653.6985000000",
+      "required_existing_expansion_thb": "5603614.466992770433585032520",
+      "required_new_customer_revenue_thb": "2401549.057282615900107871080",
+      "total_gross_growth_required_thb": "20035765.98573712725844693032",
+      "documented_incremental_pipeline_in_supplied_data_thb": "0",
+      "growth_not_validated_by_pipeline_data_thb": "20035765.98573712725844693032"
+    }
+  ],
+  "summaries": {
+    "category": [
+      {
+        "group": "Chemistry",
+        "2024_ytd_thb": "65068647.70000000",
+        "2025_ytd_thb": "61923948.85000000",
+        "2026_ytd_thb": "70384588.01000000",
+        "change_thb": "8460639.16000000",
+        "growth_pct": "13.66295159970244694755121390",
+        "2026_customers": 571,
+        "2026_top5_customer_share_pct": "26.81291996384024866866589477"
+      },
+      {
+        "group": "Biology",
+        "2024_ytd_thb": "25421423.42000000",
+        "2025_ytd_thb": "25803346.49000000",
+        "2026_ytd_thb": "22653326.00000000",
+        "change_thb": "-3150020.49000000",
+        "growth_pct": "-12.20779828391941265599770660",
+        "2026_customers": 281,
+        "2026_top5_customer_share_pct": "31.15032869786979624978689663"
+      },
+      {
+        "group": "Biomonitoring (LA2)",
+        "2024_ytd_thb": "8514881.60000000",
+        "2025_ytd_thb": "8049902.71000000",
+        "2026_ytd_thb": "8417127.01000000",
+        "change_thb": "367224.30000000",
+        "growth_pct": "4.561847679771523598947943100",
+        "2026_customers": 137,
+        "2026_top5_customer_share_pct": "23.03054234178652366563255649"
+      },
+      {
+        "group": "Diagnostics & Regulated Materials",
+        "2024_ytd_thb": "1907143.89000000",
+        "2025_ytd_thb": "2726653.54000000",
+        "2026_ytd_thb": "2595680.15000000",
+        "change_thb": "-130973.39000000",
+        "growth_pct": "-4.803448185793344320525591970",
+        "2026_customers": 131,
+        "2026_top5_customer_share_pct": "28.30934312149360929542879156"
+      }
+    ],
+    "subcategory": [
+      {
+        "group": "Analytical Chemistry & Solvents",
+        "2024_ytd_thb": "46473724.50000000",
+        "2025_ytd_thb": "43748690.69000000",
+        "2026_ytd_thb": "50604627.01000000",
+        "change_thb": "6855936.32000000",
+        "growth_pct": "15.67118058133593026164230560",
+        "2026_customers": 500,
+        "2026_top5_customer_share_pct": "34.86875468228058381256706352"
+      },
+      {
+        "group": "Reference Materials (RM)",
+        "2024_ytd_thb": "5380386.41000000",
+        "2025_ytd_thb": "6229355.65000000",
+        "2026_ytd_thb": "6696881.00000000",
+        "change_thb": "467525.35000000",
+        "growth_pct": "7.505195982830102179187666100",
+        "2026_customers": 185,
+        "2026_top5_customer_share_pct": "34.32129076207267233806304756"
+      },
+      {
+        "group": "Biochemistry",
+        "2024_ytd_thb": "7642113.45000000",
+        "2025_ytd_thb": "6616763.64000000",
+        "2026_ytd_thb": "6534696.49000000",
+        "change_thb": "-82067.15000000",
+        "growth_pct": "-1.240291394177713139531156050",
+        "2026_customers": 179,
+        "2026_top5_customer_share_pct": "39.53527151495906736442781599"
+      },
+      {
+        "group": "Molecular Reagents & Tools",
+        "2024_ytd_thb": "6232724.32000000",
+        "2025_ytd_thb": "6362725.59000000",
+        "2026_ytd_thb": "6489669.77000000",
+        "change_thb": "126944.18000000",
+        "growth_pct": "1.995122659375916917391372200",
+        "2026_customers": 156,
+        "2026_top5_customer_share_pct": "38.00679368004267496033161022"
+      },
+      {
+        "group": "FB&O Microbiology (C52)",
+        "2024_ytd_thb": "4970496.80000000",
+        "2025_ytd_thb": "5466190.37000000",
+        "2026_ytd_thb": "6421657.01000000",
+        "change_thb": "955466.64000000",
+        "growth_pct": "17.47957124296057036154779950",
+        "2026_customers": 121,
+        "2026_top5_customer_share_pct": "26.73593431300373982446627121"
+      },
+      {
+        "group": "Protein & Pathway Analysis",
+        "2024_ytd_thb": "6044016.64000000",
+        "2025_ytd_thb": "6447864.41000000",
+        "2026_ytd_thb": "5265928.07000000",
+        "change_thb": "-1181936.34000000",
+        "growth_pct": "-18.33066368714164695035825048",
+        "2026_customers": 145,
+        "2026_top5_customer_share_pct": "32.01508409513842827708810690"
+      },
+      {
+        "group": "Cell Biology Reagents",
+        "2024_ytd_thb": "3829323.08000000",
+        "2025_ytd_thb": "4814387.86000000",
+        "2026_ytd_thb": "4358875.37000000",
+        "change_thb": "-455512.49000000",
+        "growth_pct": "-9.461483022267341792441292840",
+        "2026_customers": 142,
+        "2026_top5_customer_share_pct": "32.17481301834055420584323795"
+      },
+      {
+        "group": "Chemical Synthesis & Discovery Chemistry",
+        "2024_ytd_thb": "2888534.87000000",
+        "2025_ytd_thb": "2962815.37000000",
+        "2026_ytd_thb": "3545872.00000000",
+        "change_thb": "583056.63000000",
+        "growth_pct": "19.67914153219746527776383180",
+        "2026_customers": 189,
+        "2026_top5_customer_share_pct": "31.37112676374104874626044031"
+      },
+      {
+        "group": "Unclassified",
+        "2024_ytd_thb": "5980149.78000000",
+        "2025_ytd_thb": "5218389.01000000",
+        "2026_ytd_thb": "3364196.46000000",
+        "change_thb": "-1854192.55000000",
+        "growth_pct": "-35.53189588677291806576144847",
+        "2026_customers": 78,
+        "2026_top5_customer_share_pct": "33.92411868835983496635627516"
+      },
+      {
+        "group": "Material Science & Flavors and Fragrances (F&F)",
+        "2024_ytd_thb": "1748108.47000000",
+        "2025_ytd_thb": "2022363.50000000",
+        "2026_ytd_thb": "2301754.69000000",
+        "change_thb": "279391.19000000",
+        "growth_pct": "13.81508269903011995617998450",
+        "2026_customers": 87,
+        "2026_top5_customer_share_pct": "32.03499370299968846810517414"
+      },
+      {
+        "group": "Pharma Microbiology (C51)",
+        "2024_ytd_thb": "3544384.80000000",
+        "2025_ytd_thb": "2583712.34000000",
+        "2026_ytd_thb": "1995470.00000000",
+        "change_thb": "-588242.34000000",
+        "growth_pct": "-22.76733097926838093748470466",
+        "2026_customers": 64,
+        "2026_top5_customer_share_pct": "49.17087202513693515813317163"
+      },
+      {
+        "group": "Cell & General Workflow Tools",
+        "2024_ytd_thb": "1374292.64000000",
+        "2025_ytd_thb": "1270792.90000000",
+        "2026_ytd_thb": "1949310.61000000",
+        "change_thb": "678517.71000000",
+        "growth_pct": "53.39325628904599640114451380",
+        "2026_customers": 53,
+        "2026_top5_customer_share_pct": "56.85266341416979205792144126"
+      },
+      {
+        "group": "Partners & Alliances",
+        "2024_ytd_thb": "1960916.96000000",
+        "2025_ytd_thb": "1689186.72000000",
+        "2026_ytd_thb": "1225345.72000000",
+        "change_thb": "-463841.00000000",
+        "growth_pct": "-27.45942733909250719186331278",
+        "2026_customers": 33,
+        "2026_top5_customer_share_pct": "71.83295176482927610013604977"
+      },
+      {
+        "group": "Regulated Materials",
+        "2024_ytd_thb": "654510.00000000",
+        "2025_ytd_thb": "964755.51000000",
+        "2026_ytd_thb": "930756.60000000",
+        "change_thb": "-33998.91000000",
+        "growth_pct": "-3.524095964997390893367377610",
+        "2026_customers": 83,
+        "2026_top5_customer_share_pct": "36.50484025576611543769874960"
+      },
+      {
+        "group": "Critical Raw Materials",
+        "2024_ytd_thb": "688678.13000000",
+        "2025_ytd_thb": "941774.96000000",
+        "2026_ytd_thb": "768023.55000000",
+        "change_thb": "-173751.41000000",
+        "growth_pct": "-18.44935545961001129186955661",
+        "2026_customers": 49,
+        "2026_top5_customer_share_pct": "30.02902710470271386860468016"
+      },
+      {
+        "group": "Analytical Chromatography (AC)",
+        "2024_ytd_thb": "655550.00000000",
+        "2025_ytd_thb": "91570.00000000",
+        "2026_ytd_thb": "495196.82000000",
+        "change_thb": "403626.82000000",
+        "growth_pct": "440.7849950857267664082122966",
+        "2026_customers": 4,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Molecular Materials",
+        "2024_ytd_thb": "189025.51000000",
+        "2025_ytd_thb": "370080.00000000",
+        "2026_ytd_thb": "321110.00000000",
+        "change_thb": "-48970.00000000",
+        "growth_pct": "-13.23227410289667099005620406",
+        "2026_customers": 11,
+        "2026_top5_customer_share_pct": "87.80168789511382392326617047"
+      },
+      {
+        "group": "Stains & Dyes",
+        "2024_ytd_thb": "172621.07000000",
+        "2025_ytd_thb": "193021.07000000",
+        "2026_ytd_thb": "285530.00000000",
+        "change_thb": "92508.93000000",
+        "growth_pct": "47.92685586086534490768287630",
+        "2026_customers": 18,
+        "2026_top5_customer_share_pct": "74.36346443456029138794522467"
+      },
+      {
+        "group": "Solvents (SOL)",
+        "2024_ytd_thb": "96300.00000000",
+        "2025_ytd_thb": "41690.00000000",
+        "2026_ytd_thb": "152010.00000000",
+        "change_thb": "110320.00000000",
+        "growth_pct": "264.6198129047733269369153274",
+        "2026_customers": 6,
+        "2026_top5_customer_share_pct": "98.56588382343266890336162095"
+      },
+      {
+        "group": "Raw Material Reagents",
+        "2024_ytd_thb": "89920.00000000",
+        "2025_ytd_thb": "120000.00000000",
+        "2026_ytd_thb": "120000.00000000",
+        "change_thb": "0E-8",
+        "growth_pct": "0",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Blood Typing",
+        "2024_ytd_thb": "0",
+        "2025_ytd_thb": "44800.00000000",
+        "2026_ytd_thb": "97000.00000000",
+        "change_thb": "52200.00000000",
+        "growth_pct": "116.5178571428571428571428571",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "PM Chemistry Production Materials",
+        "2024_ytd_thb": "34639.18000000",
+        "2025_ytd_thb": "69972.00000000",
+        "2026_ytd_thb": "40450.00000000",
+        "change_thb": "-29522.00000000",
+        "growth_pct": "-42.19116217915737723660892929",
+        "2026_customers": 5,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "BioChem Specialty & Kits",
+        "2024_ytd_thb": "97200.00000000",
+        "2025_ytd_thb": "100060.00000000",
+        "2026_ytd_thb": "28790.00000000",
+        "change_thb": "-71270.00000000",
+        "growth_pct": "-71.22726364181491105336797921",
+        "2026_customers": 2,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "PM Biochemistry",
+        "2024_ytd_thb": "17930.00000000",
+        "2025_ytd_thb": "22250.00000000",
+        "2026_ytd_thb": "26160.00000000",
+        "change_thb": "3910.00000000",
+        "growth_pct": "17.57303370786516853932584270",
+        "2026_customers": 2,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Biochemistry IFRS & Other",
+        "2024_ytd_thb": "36100.00000000",
+        "2025_ytd_thb": "28050.00000000",
+        "2026_ytd_thb": "15300.00000000",
+        "change_thb": "-12750.00000000",
+        "growth_pct": "-45.45454545454545454545454545",
+        "2026_customers": 3,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "PM Biology Production Materials",
+        "2024_ytd_thb": "46920.00000000",
+        "2025_ytd_thb": "0",
+        "2026_ytd_thb": "6650.00000000",
+        "change_thb": "6650.00000000",
+        "growth_pct": "",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "3rd Party Alliances Ref Mat",
+        "2024_ytd_thb": "0",
+        "2025_ytd_thb": "39700.00000000",
+        "2026_ytd_thb": "6420.00000000",
+        "change_thb": "-33280.00000000",
+        "growth_pct": "-83.82871536523929471032745592",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "BioChem Essentials",
+        "2024_ytd_thb": "50630.00000000",
+        "2025_ytd_thb": "42890.00000000",
+        "2026_ytd_thb": "3040.00000000",
+        "change_thb": "-39850.00000000",
+        "growth_pct": "-92.91210072277920261133131266",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Membranes & rapid technologies",
+        "2024_ytd_thb": "12900.00000000",
+        "2025_ytd_thb": "0",
+        "2026_ytd_thb": "0",
+        "change_thb": "0",
+        "growth_pct": "",
+        "2026_customers": 0,
+        "2026_top5_customer_share_pct": "0"
+      }
+    ],
+    "industry": [
+      {
+        "group": "University",
+        "2024_ytd_thb": "30183807.75000000",
+        "2025_ytd_thb": "30817501.18000000",
+        "2026_ytd_thb": "26788552.34000000",
+        "change_thb": "-4028948.84000000",
+        "growth_pct": "-13.07357405932287206940897082",
+        "2026_customers": 182,
+        "2026_top5_customer_share_pct": "27.45566190606625367199667050"
+      },
+      {
+        "group": "Unclassified",
+        "2024_ytd_thb": "14000151.06000000",
+        "2025_ytd_thb": "15727721.45000000",
+        "2026_ytd_thb": "15920415.46000000",
+        "change_thb": "192694.01000000",
+        "growth_pct": "1.225187072473234830847032800",
+        "2026_customers": 194,
+        "2026_top5_customer_share_pct": "38.80674480840464197282952062"
+      },
+      {
+        "group": "Research center",
+        "2024_ytd_thb": "10888990.87000000",
+        "2025_ytd_thb": "10931484.99000000",
+        "2026_ytd_thb": "12707482.70000000",
+        "change_thb": "1775997.71000000",
+        "growth_pct": "16.24662808049101113022705620",
+        "2026_customers": 25,
+        "2026_top5_customer_share_pct": "82.42037409974203624137139294"
+      },
+      {
+        "group": "Lab service",
+        "2024_ytd_thb": "7090663.56000000",
+        "2025_ytd_thb": "8235579.82000000",
+        "2026_ytd_thb": "9750415.00000000",
+        "change_thb": "1514835.18000000",
+        "growth_pct": "18.39378906050114635401590950",
+        "2026_customers": 33,
+        "2026_top5_customer_share_pct": "49.24816020651428682779143247"
+      },
+      {
+        "group": "Scientific Distributor",
+        "2024_ytd_thb": "7170927.00000000",
+        "2025_ytd_thb": "8772475.00000000",
+        "2026_ytd_thb": "8426112.40000000",
+        "change_thb": "-346362.60000000",
+        "growth_pct": "-3.948288253885021045941994710",
+        "2026_customers": 65,
+        "2026_top5_customer_share_pct": "49.97970357005918886152052754"
+      },
+      {
+        "group": "Consumer Goods",
+        "2024_ytd_thb": "5717990.00000000",
+        "2025_ytd_thb": "3860520.00000000",
+        "2026_ytd_thb": "6444550.00000000",
+        "change_thb": "2584030.00000000",
+        "growth_pct": "66.93476526478298260337985560",
+        "2026_customers": 6,
+        "2026_top5_customer_share_pct": "99.94119061842952572328556687"
+      },
+      {
+        "group": "Plastic and Rubber",
+        "2024_ytd_thb": "5463540.00000000",
+        "2025_ytd_thb": "4635040.00000000",
+        "2026_ytd_thb": "5595895.00000000",
+        "change_thb": "960855.00000000",
+        "growth_pct": "20.73024181021091511615865240",
+        "2026_customers": 13,
+        "2026_top5_customer_share_pct": "91.66210230892466709972220708"
+      },
+      {
+        "group": "Petroleum",
+        "2024_ytd_thb": "6567470.00000000",
+        "2025_ytd_thb": "1624046.00000000",
+        "2026_ytd_thb": "5405518.25000000",
+        "change_thb": "3781472.25000000",
+        "growth_pct": "232.8426811802128757436673592",
+        "2026_customers": 8,
+        "2026_top5_customer_share_pct": "98.16779824950179383817638577"
+      },
+      {
+        "group": "Hospital",
+        "2024_ytd_thb": "3038527.00000000",
+        "2025_ytd_thb": "2645253.83000000",
+        "2026_ytd_thb": "2887455.05000000",
+        "change_thb": "242201.22000000",
+        "growth_pct": "9.156067264818968242454071000",
+        "2026_customers": 7,
+        "2026_top5_customer_share_pct": "99.35479515083706671035450405"
+      },
+      {
+        "group": "Chemical manufacturer",
+        "2024_ytd_thb": "2514800.00000000",
+        "2025_ytd_thb": "3374329.99000000",
+        "2026_ytd_thb": "2737514.97000000",
+        "change_thb": "-636815.02000000",
+        "growth_pct": "-18.87233975003138326728975313",
+        "2026_customers": 25,
+        "2026_top5_customer_share_pct": "67.94191046926037449212560836"
+      },
+      {
+        "group": "Food and Beverage",
+        "2024_ytd_thb": "2608410.00000000",
+        "2025_ytd_thb": "2861705.00000000",
+        "2026_ytd_thb": "2587833.00000000",
+        "change_thb": "-273872.00000000",
+        "growth_pct": "-9.570238721321729528375566310",
+        "2026_customers": 17,
+        "2026_top5_customer_share_pct": "83.73697220802115128758308593"
+      },
+      {
+        "group": "Healthcare",
+        "2024_ytd_thb": "1142100.00000000",
+        "2025_ytd_thb": "917905.00000000",
+        "2026_ytd_thb": "1067810.00000000",
+        "change_thb": "149905.00000000",
+        "growth_pct": "16.33121074621011978363774030",
+        "2026_customers": 9,
+        "2026_top5_customer_share_pct": "97.69340987628885288581301917"
+      },
+      {
+        "group": "Agricultural",
+        "2024_ytd_thb": "1083217.64000000",
+        "2025_ytd_thb": "641157.66000000",
+        "2026_ytd_thb": "716450.00000000",
+        "change_thb": "75292.34000000",
+        "growth_pct": "11.74318653543030274332213390",
+        "2026_customers": 9,
+        "2026_top5_customer_share_pct": "85.90411054504850303580152139"
+      },
+      {
+        "group": "Automotive",
+        "2024_ytd_thb": "675250.00000000",
+        "2025_ytd_thb": "903480.00000000",
+        "2026_ytd_thb": "640470.00000000",
+        "change_thb": "-263010.00000000",
+        "growth_pct": "-29.11077168282640456899986718",
+        "2026_customers": 5,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Pharmaceutical",
+        "2024_ytd_thb": "619795.00000000",
+        "2025_ytd_thb": "570750.00000000",
+        "2026_ytd_thb": "587822.00000000",
+        "change_thb": "17072.00000000",
+        "growth_pct": "2.991151992991677617170389800",
+        "2026_customers": 8,
+        "2026_top5_customer_share_pct": "86.43466899843830275151321318"
+      },
+      {
+        "group": "Water Utilities",
+        "2024_ytd_thb": "202060.00000000",
+        "2025_ytd_thb": "367370.00000000",
+        "2026_ytd_thb": "428250.00000000",
+        "change_thb": "60880.00000000",
+        "growth_pct": "16.57184854506355989873969020",
+        "2026_customers": 3,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Building and Construction",
+        "2024_ytd_thb": "444870.00000000",
+        "2025_ytd_thb": "317710.00000000",
+        "2026_ytd_thb": "341370.00000000",
+        "change_thb": "23660.00000000",
+        "growth_pct": "7.447042900758553397752667500",
+        "2026_customers": 5,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Environment",
+        "2024_ytd_thb": "219270.00000000",
+        "2025_ytd_thb": "193410.00000000",
+        "2026_ytd_thb": "247375.00000000",
+        "change_thb": "53965.00000000",
+        "growth_pct": "27.90186650121503541698981440",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Energy",
+        "2024_ytd_thb": "394796.73000000",
+        "2025_ytd_thb": "165810.00000000",
+        "2026_ytd_thb": "221020.00000000",
+        "change_thb": "55210.00000000",
+        "growth_pct": "33.29714733731379289548278150",
+        "2026_customers": 5,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Textile",
+        "2024_ytd_thb": "179450.00000000",
+        "2025_ytd_thb": "164360.00000000",
+        "2026_ytd_thb": "135400.00000000",
+        "change_thb": "-28960.00000000",
+        "growth_pct": "-17.61985884643465563397420297",
+        "2026_customers": 3,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Manufacturing",
+        "2024_ytd_thb": "230640.00000000",
+        "2025_ytd_thb": "390270.00000000",
+        "2026_ytd_thb": "99110.00000000",
+        "change_thb": "-291160.00000000",
+        "growth_pct": "-74.60476080662105721679862659",
+        "2026_customers": 6,
+        "2026_top5_customer_share_pct": "98.50670971647664211482191504"
+      },
+      {
+        "group": "Commercial & Professional Services",
+        "2024_ytd_thb": "2760.00000000",
+        "2025_ytd_thb": "37540.00000000",
+        "2026_ytd_thb": "78850.00000000",
+        "change_thb": "41310.00000000",
+        "growth_pct": "110.0426212040490143846563665",
+        "2026_customers": 2,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Electronics",
+        "2024_ytd_thb": "118970.00000000",
+        "2025_ytd_thb": "57980.00000000",
+        "2026_ytd_thb": "62570.00000000",
+        "change_thb": "4590.00000000",
+        "growth_pct": "7.916522938944463608140738200",
+        "2026_customers": 4,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Electrical Equipment",
+        "2024_ytd_thb": "18600.00000000",
+        "2025_ytd_thb": "25740.00000000",
+        "2026_ytd_thb": "47520.00000000",
+        "change_thb": "21780.00000000",
+        "growth_pct": "84.61538461538461538461538460",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "School",
+        "2024_ytd_thb": "22580.00000000",
+        "2025_ytd_thb": "42821.67000000",
+        "2026_ytd_thb": "31720.00000000",
+        "change_thb": "-11101.67000000",
+        "growth_pct": "-25.92535508306892281407988058",
+        "2026_customers": 2,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Printing",
+        "2024_ytd_thb": "63610.00000000",
+        "2025_ytd_thb": "45700.00000000",
+        "2026_ytd_thb": "25320.00000000",
+        "change_thb": "-20380.00000000",
+        "growth_pct": "-44.59518599562363238512035011",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Retail",
+        "2024_ytd_thb": "20800.00000000",
+        "2025_ytd_thb": "16200.00000000",
+        "2026_ytd_thb": "24300.00000000",
+        "change_thb": "8100.00000000",
+        "growth_pct": "50.0",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Jewelry",
+        "2024_ytd_thb": "16070.00000000",
+        "2025_ytd_thb": "34780.00000000",
+        "2026_ytd_thb": "18970.00000000",
+        "change_thb": "-15810.00000000",
+        "growth_pct": "-45.45715928694652098907418056",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Cosmetic",
+        "2024_ytd_thb": "8050.00000000",
+        "2025_ytd_thb": "42230.00000000",
+        "2026_ytd_thb": "6500.00000000",
+        "change_thb": "-35730.00000000",
+        "growth_pct": "-84.60809850816954771489462467",
+        "2026_customers": 3,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Nuclear",
+        "2024_ytd_thb": "0",
+        "2025_ytd_thb": "31000.00000000",
+        "2026_ytd_thb": "6290.00000000",
+        "change_thb": "-24710.00000000",
+        "growth_pct": "-79.70967741935483870967741935",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Logistic",
+        "2024_ytd_thb": "14060.00000000",
+        "2025_ytd_thb": "0",
+        "2026_ytd_thb": "6220.00000000",
+        "change_thb": "6220.00000000",
+        "growth_pct": "",
+        "2026_customers": 2,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Lab equipment manufacturer",
+        "2024_ytd_thb": "27500.00000000",
+        "2025_ytd_thb": "0",
+        "2026_ytd_thb": "5640.00000000",
+        "change_thb": "5640.00000000",
+        "growth_pct": "",
+        "2026_customers": 1,
+        "2026_top5_customer_share_pct": "100"
+      },
+      {
+        "group": "Packaging",
+        "2024_ytd_thb": "50340.00000000",
+        "2025_ytd_thb": "1650.00000000",
+        "2026_ytd_thb": "0",
+        "change_thb": "-1650.00000000",
+        "growth_pct": "-100",
+        "2026_customers": 0,
+        "2026_top5_customer_share_pct": "0"
+      },
+      {
+        "group": "Other",
+        "2024_ytd_thb": "57600.00000000",
+        "2025_ytd_thb": "0",
+        "2026_ytd_thb": "0",
+        "change_thb": "0",
+        "growth_pct": "",
+        "2026_customers": 0,
+        "2026_top5_customer_share_pct": "0"
+      },
+      {
+        "group": "Mining",
+        "2024_ytd_thb": "44560.00000000",
+        "2025_ytd_thb": "50330.00000000",
+        "2026_ytd_thb": "0",
+        "change_thb": "-50330.00000000",
+        "growth_pct": "-100",
+        "2026_customers": 0,
+        "2026_top5_customer_share_pct": "0"
+      },
+      {
+        "group": "Waste management",
+        "2024_ytd_thb": "4270.00000000",
+        "2025_ytd_thb": "0",
+        "2026_ytd_thb": "0",
+        "change_thb": "0",
+        "growth_pct": "",
+        "2026_customers": 0,
+        "2026_top5_customer_share_pct": "0"
+      },
+      {
+        "group": "NGO",
+        "2024_ytd_thb": "5600.00000000",
+        "2025_ytd_thb": "0",
+        "2026_ytd_thb": "0",
+        "change_thb": "0",
+        "growth_pct": "",
+        "2026_customers": 0,
+        "2026_top5_customer_share_pct": "0"
+      }
+    ],
+    "brand": [
+      {
+        "group": "Merck",
+        "2024_ytd_thb": "72113002.43000000",
+        "2025_ytd_thb": "65876840.58000000",
+        "2026_ytd_thb": "72288843.03000000",
+        "change_thb": "6412002.45000000",
+        "growth_pct": "9.733318103216175823470251800",
+        "2026_customers": 572,
+        "2026_top5_customer_share_pct": "26.20467344060078256864584930"
+      },
+      {
+        "group": "Sigma-Aldrich",
+        "2024_ytd_thb": "22832061.34000000",
+        "2025_ytd_thb": "25207482.85000000",
+        "2026_ytd_thb": "23601935.42000000",
+        "change_thb": "-1605547.43000000",
+        "growth_pct": "-6.369328661469266853036855280",
+        "2026_customers": 341,
+        "2026_top5_customer_share_pct": "20.87744679542047488578375239"
+      },
+      {
+        "group": "Supelco",
+        "2024_ytd_thb": "4171045.88000000",
+        "2025_ytd_thb": "5959615.13000000",
+        "2026_ytd_thb": "7157970.00000000",
+        "change_thb": "1198354.87000000",
+        "growth_pct": "20.10792381487225333626535710",
+        "2026_customers": 153,
+        "2026_top5_customer_share_pct": "40.58365709831139275520852979"
+      },
+      {
+        "group": "Roche",
+        "2024_ytd_thb": "1567856.96000000",
+        "2025_ytd_thb": "1280663.03000000",
+        "2026_ytd_thb": "960627.72000000",
+        "change_thb": "-320035.31000000",
+        "growth_pct": "-24.98981406529709848811673747",
+        "2026_customers": 21,
+        "2026_top5_customer_share_pct": "79.45242304688022119536588014"
+      },
+      {
+        "group": "Millipore",
+        "2024_ytd_thb": "228130.00000000",
+        "2025_ytd_thb": "179250.00000000",
+        "2026_ytd_thb": "41345.00000000",
+        "change_thb": "-137905.00000000",
+        "growth_pct": "-76.93444909344490934449093445",
+        "2026_customers": 4,
+        "2026_top5_customer_share_pct": "100"
+      }
+    ]
+  },
+  "quarter_weights": {
+    "1": "0.2387916633359302729116048976",
+    "2": "0.2423415400549453845970140766",
+    "3": "0.2613756512970322316254658033",
+    "4": "0.2574911453120921108659152225"
+  },
+  "cohort_summary": {
+    "2024 only or zero revenue": {
+      "accounts": 94,
+      "2026_ytd_revenue": "0"
+    },
+    "2025 buyer inactive in 2026": {
+      "accounts": 149,
+      "2026_ytd_revenue": "0"
+    },
+    "First observed in 2026": {
+      "accounts": 118,
+      "2026_ytd_revenue": "1990085.00000000"
+    },
+    "Prior year late-period buyer": {
+      "accounts": 14,
+      "2026_ytd_revenue": "882286.00000000"
+    },
+    "Reactivated from 2024": {
+      "accounts": 27,
+      "2026_ytd_revenue": "452110.00000000"
+    },
+    "Retained": {
+      "accounts": 489,
+      "2026_ytd_revenue": "100726240.17000000"
+    }
+  }
+}

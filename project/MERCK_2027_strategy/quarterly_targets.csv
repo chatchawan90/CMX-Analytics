@@ -1,0 +1,13 @@
+﻿scenario,quarter,2025_seasonality_weight_pct,2027_revenue_target_thb
+Conservative,Q1,23.88,29550544.59
+Conservative,Q2,24.23,29989842.97
+Conservative,Q3,26.14,32345320.31
+Conservative,Q4,25.75,31864611.45
+Base,Q1,23.88,30957713.38
+Base,Q2,24.23,31417930.73
+Base,Q3,26.14,33885573.66
+Base,Q4,25.75,33381973.90
+Supported stretch,Q1,23.88,32364882.17
+Supported stretch,Q2,24.23,32846018.49
+Supported stretch,Q3,26.14,35425827.01
+Supported stretch,Q4,25.75,34899336.35
